@@ -56,19 +56,24 @@ func up() {
 	db.AutoMigrate(
 
 		//Master
+		&master_model.MasterActivityType{},
 		&master_model.MasterAp{},
-		&master_model.MasterRegion{},
-		&master_model.MasterZone{},
 		&master_model.MasterWk{},
 		&master_model.MasterField{},
-		&master_model.MasterRkapClassification{},
-		&master_model.MasterActivityType{},
+		&master_model.MasterRegion{},
+		&master_model.MasterZone{},
 		&master_model.MasterBusinessStream{},
 		&master_model.MasterCategory{},
+		&master_model.MasterFidStatus{},
 		&master_model.MasterFollowUpStatus{},
-		&master_model.MasterSbtConnection{},
-		&master_model.MasterThematicArea{},
 		&master_model.MasterMonthOfPeriod{},
+		&master_model.MasterPriority{},
+		&master_model.MasterRkapClassification{},
+		&master_model.MasterSbtConnection{},
+		&master_model.MasterStage{},
+		&master_model.MasterThematicArea{},
+		&master_model.MasterTreshold{},
+		&master_model.MasterBudgetItem{},
 
 		//Period
 		&period_model.BudgetYear{},
@@ -77,9 +82,15 @@ func up() {
 
 		//RKAP
 		&rkap_model.BudgetItemDetail{},
+		&rkap_model.WpBDetail{},
+		&rkap_model.DdRkapValue{},
+		&rkap_model.YtdRkapValue{},
 
 		//Actuals Forecast
 		&prognosa_model.ActualsForecastData{},
+		&prognosa_model.ActualForecastNotes{},
+		&prognosa_model.YtdRealization{},
+		&prognosa_model.YtdDeviation{},
 
 		//Narration
 		&narration_model.ActualsDeviationNarration{},
@@ -109,11 +120,17 @@ func down() {
 		&narration_model.ForecastNarration{},
 		&narration_model.ActualsDeviationNarration{},
 
-		//Actuals Forecast
-		&prognosa_model.ActualsForecastData{},
-
 		//RKAP
+		&rkap_model.YtdRkapValue{},
+		&rkap_model.DdRkapValue{},
+		&rkap_model.WpBDetail{},
 		&rkap_model.BudgetItemDetail{},
+
+		//Actuals Forecast
+		&prognosa_model.YtdDeviation{},
+		&prognosa_model.YtdRealization{},
+		&prognosa_model.ActualForecastNotes{},
+		&prognosa_model.ActualsForecastData{},
 
 		//Period
 		&period_model.NarrationPeriod{},
@@ -121,19 +138,24 @@ func down() {
 		&period_model.BudgetYear{},
 
 		//Master
-		&master_model.MasterMonthOfPeriod{},
+		&master_model.MasterBudgetItem{},
+		&master_model.MasterTreshold{},
 		&master_model.MasterThematicArea{},
+		&master_model.MasterStage{},
 		&master_model.MasterSbtConnection{},
-		&master_model.MasterFollowUpStatus{},
-		&master_model.MasterCategory{},
-		&master_model.MasterBusinessStream{},
-		&master_model.MasterActivityType{},
 		&master_model.MasterRkapClassification{},
-		&master_model.MasterField{},
-		&master_model.MasterWk{},
+		&master_model.MasterPriority{},
+		&master_model.MasterCategory{},
+		&master_model.MasterFidStatus{},
+		&master_model.MasterFollowUpStatus{},
+		&master_model.MasterMonthOfPeriod{},
+		&master_model.MasterBusinessStream{},
 		&master_model.MasterZone{},
 		&master_model.MasterRegion{},
+		&master_model.MasterField{},
+		&master_model.MasterWk{},
 		&master_model.MasterAp{},
+		&master_model.MasterActivityType{},
 	)
 	print("Database Dropped")
 }

@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type YtdRealizationValue struct {
+type YtdRealization struct {
 	gorm.Model
 
 	BudgetItemDetailId uint    `gorm:"not null" json:"-"`

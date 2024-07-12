@@ -23,19 +23,20 @@ type BudgetItemDetail struct {
 	FidTarget            string  `json:"-"`
 	TresholdId           uint    `gorm:"not null" json:"-"`
 	NoWbs                string  `json:"-"`
-	BudgetItem           string  `gorm:"not null" json:"-"`
+	BudgetItemId         uint    `gorm:"not null" json:"-"`
 	WorkPlan             string  `gorm:"not null" json:"-"`
 	ActivityTypeId       uint    `gorm:"not null" json:"-"`
 	BusinessStreamId     uint    `gorm:"not null" json:"-"`
 	CategoryId           uint    `gorm:"not null" json:"-"`
 	PriorityId           uint    `gorm:"not null" json:"-"`
-
+	StageId              uint    `gorm:"not null" json:"-"`
+	StartYear            int     `gorm:"not null" json:"-"`
+	EndYear              int     `gorm:"not null" json:"-"`
 	RealizedLastYear     float32 `json:"-"`
-	TotalFidInvestment uint64  `json:"-"`
-
-	FollowUpStatusId uint `json:"-"`
-	SbtConnectionId  uint `json:"-"`
-	ThematicAreaId   uint `json:"-"`
+	TotalFidInvestment   uint64  `json:"-"`
+	FollowUpStatusId     uint    `json:"-"`
+	SbtConnectionId      uint    `json:"-"`
+	ThematicAreaId       uint    `json:"-"`
 
 	BudgetYear         *period_model.BudgetYear               `json:"-"`
 	Ap                 *master_model.MasterAp                 `json:"-"`
@@ -46,12 +47,13 @@ type BudgetItemDetail struct {
 	RkapClassification *master_model.MasterRkapClassification `json:"-"`
 	FidStatus          *master_model.MasterFidStatus          `json:"-"`
 	Treshold           *master_model.MasterTreshold           `json:"-"`
+	BudgetItem         *master_model.MasterBudgetItem         `json:"-"`
 	ActivityType       *master_model.MasterActivityType       `json:"-"`
 	BusinessStream     *master_model.MasterBusinessStream     `json:"-"`
 	Category           *master_model.MasterCategory           `json:"-"`
 	Priority           *master_model.MasterPriority           `json:"-"`
-
-	FollowUpStatus *master_model.MasterFollowUpStatus `json:"-"`
-	SbtConnection  *master_model.MasterSbtConnection  `json:"-"`
-	ThematicArea   *master_model.MasterThematicArea   `json:"-"`
+	Stage              *master_model.MasterStage              `json:"-"`
+	FollowUpStatus     *master_model.MasterFollowUpStatus     `json:"-"`
+	SbtConnection      *master_model.MasterSbtConnection      `json:"-"`
+	ThematicArea       *master_model.MasterThematicArea       `json:"-"`
 }

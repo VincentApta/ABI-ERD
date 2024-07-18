@@ -5,7 +5,7 @@ import "gorm.io/gorm"
 type MasterField struct {
 	gorm.Model
 
-	WkId uint   `gorm:"not null" json:"-"`
+	WkId  uint   `gorm:"not null" json:"-"`
 	Field string `gorm:"not null" json:"-"`
 
 	Wk *MasterWk `json:"-"`

@@ -12,6 +12,5 @@ type FidStatusNarration struct {
 	ActualForecastPeriodId uint   `gorm:"not null" json:"-"`
 	Narration              string `gorm:"not null" json:"-"`
 	
-
 	ActualForecastPeriod *period_model.ActualsForecastPeriod `json:"-"`
 }

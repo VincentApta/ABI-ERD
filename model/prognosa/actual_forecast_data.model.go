@@ -14,7 +14,7 @@ type ActualsForecastData struct {
 	BudgetItemDetailId      uint    `json:"-"`
 	EeYtd                   float32 `json:"-"`
 	DdRealization           float32 `json:"-"`
-	PrognosaStatus           float32 `json:"-"`
+	ForecastStatus           float32 `json:"-"`
 
 	ActualsForecastPeriod *period_model.ActualsForecastPeriod `json:"-"`
 	BudgetItemDetail      *rkap_model.BudgetItemDetail        `json:"-"`

@@ -9,11 +9,11 @@ import (
 type YtdDeviation struct {
 	gorm.Model
 
-	BudgetItemDetailId  uint    `gorm:"not null" json:"-"`
-	RealizationRkap     float32 `json:"-"`
-	EeRealization       float32 `json:"-"`
-	PrognosaRkap        float32 `json:"-"`
-	PrognosaRealization float32 `json:"-"`
+	BudgetItemDetailId   uint    `gorm:"not null" json:"-"`
+	RealizationWorksheet float32 `json:"-"`
+	EeRealization        float32 `json:"-"`
+	WorksheetForecast    float32 `json:"-"`
+	ForecastRealization  float32 `json:"-"`
 
 	BudgetItemDetail *rkap_model.BudgetItemDetail `json:"-"`
 }

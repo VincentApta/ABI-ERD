@@ -57,18 +57,18 @@ func up() {
 
 		//Master
 		&master_model.MasterActivityType{},
+		&master_model.MasterRegion{},
 		&master_model.MasterAp{},
 		&master_model.MasterWk{},
+		&master_model.MasterZona{},
 		&master_model.MasterField{},
-		&master_model.MasterRegion{},
-		&master_model.MasterZone{},
 		&master_model.MasterBusinessStream{},
 		&master_model.MasterCategory{},
 		&master_model.MasterFidStatus{},
 		&master_model.MasterFollowUpStatus{},
 		&master_model.MasterMonthOfPeriod{},
 		&master_model.MasterPriority{},
-		&master_model.MasterRkapClassification{},
+		&master_model.MasterWorksheetClassification{},
 		&master_model.MasterSbtConnection{},
 		&master_model.MasterStage{},
 		&master_model.MasterThematicArea{},
@@ -83,8 +83,8 @@ func up() {
 		//RKAP
 		&rkap_model.BudgetItemDetail{},
 		&rkap_model.WpBDetail{},
-		&rkap_model.DdRkapValue{},
-		&rkap_model.YtdRkapValue{},
+		&rkap_model.DdWorksheetValue{},
+		&rkap_model.YtdWorksheetValue{},
 
 		//Actuals Forecast
 		&prognosa_model.ActualsForecastData{},
@@ -121,8 +121,8 @@ func down() {
 		&narration_model.ActualsDeviationNarration{},
 
 		//RKAP
-		&rkap_model.YtdRkapValue{},
-		&rkap_model.DdRkapValue{},
+		&rkap_model.YtdWorksheetValue{},
+		&rkap_model.DdWorksheetValue{},
 		&rkap_model.WpBDetail{},
 		&rkap_model.BudgetItemDetail{},
 
@@ -143,18 +143,18 @@ func down() {
 		&master_model.MasterThematicArea{},
 		&master_model.MasterStage{},
 		&master_model.MasterSbtConnection{},
-		&master_model.MasterRkapClassification{},
+		&master_model.MasterWorksheetClassification{},
 		&master_model.MasterPriority{},
 		&master_model.MasterCategory{},
 		&master_model.MasterFidStatus{},
 		&master_model.MasterFollowUpStatus{},
 		&master_model.MasterMonthOfPeriod{},
 		&master_model.MasterBusinessStream{},
-		&master_model.MasterZone{},
-		&master_model.MasterRegion{},
 		&master_model.MasterField{},
 		&master_model.MasterWk{},
+		&master_model.MasterZona{},
 		&master_model.MasterAp{},
+		&master_model.MasterRegion{},
 		&master_model.MasterActivityType{},
 	)
 	print("Database Dropped")

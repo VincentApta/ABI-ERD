@@ -10,7 +10,7 @@ type ActualForecastNotes struct {
 	gorm.Model
 
 	BudgetItemDetailId       uint   `gorm:"not null" json:"-"`
-	StatusOfPrognosa         string `json:"-"`
+	StatusOfForecast         string `json:"-"`
 	StatusNotes              string `json:"-"`
 	InvestmentActivityUpdate string `json:"-"`
 	RealizationGapNotes      string `json:"-"`

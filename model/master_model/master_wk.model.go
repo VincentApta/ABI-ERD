@@ -5,5 +5,8 @@ import "gorm.io/gorm"
 type MasterWk struct {
 	gorm.Model
 
-	Wk string `gorm:"not null" json:"-"`
+	ZonaId uint   `gorm:"not null" json:"-"`
+	Wk     string `gorm:"not null" json:"-"`
+
+	Zona *MasterZona `json:"-"`
 }

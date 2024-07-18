@@ -5,6 +5,9 @@ import "gorm.io/gorm"
 type MasterAp struct {
 	gorm.Model
 
-	Name string `json:"-"`
-	Code string `gorm:"not null" json:"-"`
+	Name     string `json:"-"`
+	Code     string `gorm:"not null" json:"-"`
+	RegionId string `json:"-"`
+
+	Region *MasterRegion `json:"-"`
 }

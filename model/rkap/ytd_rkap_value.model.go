@@ -2,23 +2,23 @@ package rkap_model
 
 import "gorm.io/gorm"
 
-type YtdRkapValue struct {
+type YtdWorksheetValue struct {
 	gorm.Model
 
-	BudgetItemDetailId uint    `gorm:"not null" json:"-"`
-	AbiRkapCurrentYear float32 `json:"-"`
-	YtdRkapJan         float32 `json:"-"`
-	YtdRkapFeb         float32 `json:"-"`
-	YtdRkapMar         float32 `json:"-"`
-	YtdRkapApr         float32 `json:"-"`
-	YtdRkapMay         float32 `json:"-"`
-	YtdRkapJun         float32 `json:"-"`
-	YtdRkapJul         float32 `json:"-"`
-	YtdRkapAug         float32 `json:"-"`
-	YtdRkapSep         float32 `json:"-"`
-	YtdRkapOct         float32 `json:"-"`
-	YtdRkapNov         float32 `json:"-"`
-	YtdRkapDec         float32 `json:"-"`
+	BudgetItemDetailId      uint    `gorm:"not null" json:"-"`
+	AbiWorksheetCurrentYear float32 `json:"-"`
+	YtdWorksheetJan         float32 `json:"-"`
+	YtdWorksheetFeb         float32 `json:"-"`
+	YtdWorksheetMar         float32 `json:"-"`
+	YtdWorksheetApr         float32 `json:"-"`
+	YtdWorksheetMay         float32 `json:"-"`
+	YtdWorksheetJun         float32 `json:"-"`
+	YtdWorksheetJul         float32 `json:"-"`
+	YtdWorksheetAug         float32 `json:"-"`
+	YtdWorksheetSep         float32 `json:"-"`
+	YtdWorksheetOct         float32 `json:"-"`
+	YtdWorksheetNov         float32 `json:"-"`
+	YtdWorksheetDec         float32 `json:"-"`
 
 	BudgetItemDetail *BudgetItemDetail `json:"-"`
 }

@@ -2,7 +2,7 @@ package master_model
 
 import "gorm.io/gorm"
 
-type MasterRkapClassification struct {
+type MasterWorksheetClassification struct {
 	gorm.Model
 
 	Code        int8   `gorm:"not null" json:"-"`

@@ -19,6 +19,7 @@ type YtdWorksheetValue struct {
 	YtdWorksheetOct         float32 `json:"-"`
 	YtdWorksheetNov         float32 `json:"-"`
 	YtdWorksheetDec         float32 `json:"-"`
+	Status                  string  `json:"-"`
 
 	BudgetItemDetail *BudgetItemDetail `json:"-"`
 }

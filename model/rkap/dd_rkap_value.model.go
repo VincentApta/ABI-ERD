@@ -18,6 +18,7 @@ type DdWorksheetValue struct {
 	DdWorksheetOct     float32 `json:"-"`
 	DdWorksheetNov     float32 `json:"-"`
 	DdWorksheetDec     float32 `json:"-"`
+	Status             string  `json:"-"`
 
 	BudgetItemDetail *BudgetItemDetail `json:"-"`
 }

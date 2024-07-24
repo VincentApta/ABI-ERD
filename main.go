@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"pertamina_abi/database"
+	"pertamina_abi/model/history"
 	"pertamina_abi/model/master_model"
 	narration_model "pertamina_abi/model/narration"
 	"pertamina_abi/model/period_model"
@@ -74,6 +75,8 @@ func up() {
 		&master_model.MasterThematicArea{},
 		&master_model.MasterTreshold{},
 		&master_model.MasterBudgetItem{},
+		&master_model.ActualPhysicalProgress{},
+		&master_model.EoyPhysicalProjection{},
 
 		//Period
 		&period_model.BudgetYear{},
@@ -96,6 +99,18 @@ func up() {
 		&narration_model.ActualsDeviationNarration{},
 		&narration_model.ForecastNarration{},
 		&narration_model.FidStatusNarration{},
+
+		//History
+		&history.HistoryMonthlySummary{},
+		&history.HistoryWpB{},
+		&history.HistoryDdRkap{},
+		&history.HistoryYtdRkap{},
+		&history.HistoryEeYtd{},
+		&history.HistoryDdRealization{},
+		&history.HistoryYtdRealization{},
+		&history.HistoryForecastStatus{},
+		&history.HistoryYtdDeviation{},
+		&history.HistoryActualForecastNotes{},
 	)
 
 	db.Exec("ALTER TABLE budget_item_details ADD CONSTRAINT unique_no_wbs UNIQUE NULLS DISTINCT(no_wbs)")
@@ -115,6 +130,18 @@ func down() {
 	db := server.DB.GetGormDB()
 
 	db.Migrator().DropTable(
+		//History
+		&history.HistoryActualForecastNotes{},
+		&history.HistoryYtdDeviation{},
+		&history.HistoryForecastStatus{},
+		&history.HistoryYtdRealization{},
+		&history.HistoryDdRealization{},
+		&history.HistoryEeYtd{},
+		&history.HistoryYtdRkap{},
+		&history.HistoryDdRkap{},
+		&history.HistoryWpB{},
+		&history.HistoryMonthlySummary{},
+
 		//Narration
 		&narration_model.FidStatusNarration{},
 		&narration_model.ForecastNarration{},
@@ -138,6 +165,8 @@ func down() {
 		&period_model.BudgetYear{},
 
 		//Master
+		&master_model.EoyPhysicalProjection{},
+		&master_model.ActualPhysicalProgress{},
 		&master_model.MasterBudgetItem{},
 		&master_model.MasterTreshold{},
 		&master_model.MasterThematicArea{},

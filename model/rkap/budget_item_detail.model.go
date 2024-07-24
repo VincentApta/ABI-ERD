@@ -11,6 +11,7 @@ type BudgetItemDetail struct {
 	gorm.Model
 
 	BudgetYearId              uint    `gorm:"not null" json:"-"`
+	Code                      string  `gorm:"not null" json:"-"`
 	ApId                      uint    `gorm:"not null" json:"-"`
 	RegionId                  uint    `gorm:"not null" json:"-"`
 	WkId                      uint    `gorm:"not null" json:"-"`
@@ -32,6 +33,9 @@ type BudgetItemDetail struct {
 	StageId                   uint    `gorm:"not null" json:"-"`
 	StartYear                 int     `gorm:"not null" json:"-"`
 	EndYear                   int     `gorm:"not null" json:"-"`
+	CauseOfDelay              string  `json:"-"`
+	ActualPhysicalProgressId  uint    `gorm:"not null" json:"-"`
+	EoyPhysicalProjectionId   uint    `gorm:"not null" json:"-"`
 	RealizedLastYear          float32 `json:"-"`
 	TotalFidInvestment        uint64  `json:"-"`
 	FollowUpStatusId          uint    `json:"-"`
@@ -39,6 +43,7 @@ type BudgetItemDetail struct {
 	ThematicAreaId            uint    `json:"-"`
 
 	BudgetYear              *period_model.BudgetYear                    `json:"-"`
+	MasterMonthOfPeriod     *master_model.MasterMonthOfPeriod           `json:"-"`
 	Ap                      *master_model.MasterAp                      `json:"-"`
 	Region                  *master_model.MasterRegion                  `json:"-"`
 	Wk                      *master_model.MasterWk                      `json:"-"`
@@ -53,6 +58,8 @@ type BudgetItemDetail struct {
 	Category                *master_model.MasterCategory                `json:"-"`
 	Priority                *master_model.MasterPriority                `json:"-"`
 	Stage                   *master_model.MasterStage                   `json:"-"`
+	ActualPhysicalProgress  *master_model.ActualPhysicalProgress        `json:"-"`
+	EoyPhysicalProjection   *master_model.EoyPhysicalProjection         `json:"-"`
 	FollowUpStatus          *master_model.MasterFollowUpStatus          `json:"-"`
 	SbtConnection           *master_model.MasterSbtConnection           `json:"-"`
 	ThematicArea            *master_model.MasterThematicArea            `json:"-"`

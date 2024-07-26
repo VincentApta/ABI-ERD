@@ -91,7 +91,6 @@ func up() {
 
 		//Actuals Forecast
 		&prognosa_model.ActualsForecastData{},
-		&prognosa_model.ActualForecastNotes{},
 		&prognosa_model.YtdRealization{},
 		&prognosa_model.YtdDeviation{},
 
@@ -156,7 +155,6 @@ func down() {
 		//Actuals Forecast
 		&prognosa_model.YtdDeviation{},
 		&prognosa_model.YtdRealization{},
-		&prognosa_model.ActualForecastNotes{},
 		&prognosa_model.ActualsForecastData{},
 
 		//Period

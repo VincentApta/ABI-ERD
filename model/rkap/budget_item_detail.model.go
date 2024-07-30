@@ -43,6 +43,7 @@ type BudgetItemDetail struct {
 	StatusNotes               string    `json:"-"`
 	InvestmentActivityUpdate  string    `json:"-"`
 	RealizationGapNotes       string    `json:"-"`
+	ObstacleCategoryId        uint      `json:"-"`
 	ActionPlan                string    `json:"-"`
 	FollowUpStatusId          uint      `json:"-"`
 	SbtConnectionId           uint      `json:"-"`
@@ -66,6 +67,7 @@ type BudgetItemDetail struct {
 	Stage                   *master_model.MasterStage                   `json:"-"`
 	ActualPhysicalProgress  *master_model.ActualPhysicalProgress        `json:"-"`
 	EoyPhysicalProjection   *master_model.EoyPhysicalProjection         `json:"-"`
+	ObstacleCategory        *master_model.MasterObstacleCategory        `json:"-"`
 	FollowUpStatus          *master_model.MasterFollowUpStatus          `json:"-"`
 	SbtConnection           *master_model.MasterSbtConnection           `json:"-"`
 	ThematicArea            *master_model.MasterThematicArea            `json:"-"`

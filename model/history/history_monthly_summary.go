@@ -20,7 +20,7 @@ type HistoryMonthlySummary struct {
 	FidTarget               string  `json:"-"`
 	Treshold                string  `gorm:"not null" json:"-"`
 	WbsNumber               string  `json:"-"`
-	BudgetItem              string  `gorm:"not null" json:"-"`	
+	BudgetItem              string  `gorm:"not null" json:"-"`
 	WorkPlan                string  `gorm:"not null" json:"-"`
 	ActivityType            string  `gorm:"not null" json:"-"`
 	BusinessStream          string  `gorm:"not null" json:"-"`

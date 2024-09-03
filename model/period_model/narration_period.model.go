@@ -10,11 +10,12 @@ import (
 type NarrationPeriod struct {
 	gorm.Model
 
-	BudgetYearId    uint      `gorm:"not null" json:"-"`
-	MonthOfPeriodId uint      `gorm:"not null" json:"-"`
-	StartDate       time.Time `gorm:"type:date; not null" json:"-"`
-	EndDate         time.Time `gorm:"type:date; not null" json:"-"`
-	IsActive        bool      `gorm:"default:true" json:"-"`
+	BudgetYearId            uint      `gorm:"not null" json:"-"`
+	MonthOfPeriodId         uint      `gorm:"not null" json:"-"`
+	StartDate               time.Time `gorm:"type:date; not null" json:"-"`
+	EndDate                 time.Time `gorm:"type:date; not null" json:"-"`
+	StartPeriodConsolidator time.Time `gorm:"type:date; not null" json:"-"`
+	EndPeriodConsolidator   time.Time `gorm:"type:date; not null" json:"-"`
 
 	BudgetYear    *BudgetYear                       `json:"-"`
 	MonthOfPeriod *master_model.MasterMonthOfPeriod `json:"-"`

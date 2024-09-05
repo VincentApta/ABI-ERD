@@ -14,6 +14,7 @@ type ForecastNarration struct {
 	Category                string `gorm:"not null" json:"-"`
 	BudgetItemDetailId      uint   `gorm:"not null" json:"-"`
 	Narration               string `json:"-"`
+	RoleGroup               string `gorm:"not null"`
 
 	ActualsForecastPeriod *period_model.ActualsForecastPeriod `json:"-"`
 	BudgetItemDetail      *rkap_model.BudgetItemDetail        `json:"-"`
